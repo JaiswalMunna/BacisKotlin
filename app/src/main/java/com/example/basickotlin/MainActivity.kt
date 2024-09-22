@@ -18,7 +18,7 @@ import androidx.compose.ui.unit.dp
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       //enableEdgeToEdge()-> it will display the content above the safearea
+        //enableEdgeToEdge()-> it will display the content above the safearea
         setContent {
 
             //Text widget
@@ -64,7 +64,7 @@ class MainActivity : ComponentActivity() {
 //            layout()
 
 
-           //box layout
+            //box layout
 //            layout()
 
             //cardLayout
@@ -127,8 +127,8 @@ class MainActivity : ComponentActivity() {
 //                )
 //            }
 //        }
-        
-        //this will make it scrollable automatically
+
+    //this will make it scrollable automatically
 //        LazyColumn (content = {
 //            item { for (i in 1..30){
 //                Text(text = "Munna Jaiswal", fontSize = 35.sp)
@@ -155,7 +155,7 @@ class MainActivity : ComponentActivity() {
 //        }
 //    }
 
-     //card and image layout
+    //card and image layout
     @Composable
     fun CardLayout(){
         Card(
@@ -172,7 +172,7 @@ class MainActivity : ComponentActivity() {
                     .padding(10.dp)
                     .align(Alignment.CenterHorizontally))
             }
-            
+
         }
     }
 
