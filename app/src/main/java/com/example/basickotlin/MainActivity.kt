@@ -1,39 +1,19 @@
 package com.example.basickotlin
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
-import androidx.activity.enableEdgeToEdge
-import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.fillMaxHeight
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.rememberScrollState
-import androidx.compose.foundation.verticalScroll
-import androidx.compose.material3.Button
-import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontStyle
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import com.example.basickotlin.ui.theme.BasicKotlinTheme
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -85,7 +65,10 @@ class MainActivity : ComponentActivity() {
 
 
            //box layout
-            layout()
+//            layout()
+
+            //cardLayout
+            CardLayout()
 
         }
     }
@@ -154,23 +137,45 @@ class MainActivity : ComponentActivity() {
 //    }
 
     //box layout
+//    @Composable
+//    fun layout(){
+//        var context= LocalContext.current
+//        Box (modifier = Modifier
+//            .fillMaxSize()
+//            .background(color = Color.DarkGray),
+//            contentAlignment = Alignment.Center){
+//            Text(text = "Munna Jaiswal", color = Color.Cyan, modifier = Modifier.align(Alignment.CenterStart))
+//            Text(text = "Munna Jaiswal", color = Color.Red, modifier = Modifier.align(Alignment.Center))
+//            Text(text = "Munna Jaiswal", color = Color.Blue, modifier = Modifier.align(Alignment.CenterEnd))
+//        Button(onClick = {
+//            Toast.makeText(context , "button clicked", Toast.LENGTH_SHORT).show()
+//        } , modifier = Modifier.align(Alignment.BottomCenter)) {
+//         Text(text = "Click Me")
+//        }
+//        }
+//    }
+
+     //card and image layout
     @Composable
-    fun layout(){
-        var context= LocalContext.current
-        Box (modifier = Modifier
-            .fillMaxSize()
-            .background(color = Color.DarkGray),
-            contentAlignment = Alignment.Center){
-            Text(text = "Munna Jaiswal", color = Color.Cyan, modifier = Modifier.align(Alignment.CenterStart))
-            Text(text = "Munna Jaiswal", color = Color.Red, modifier = Modifier.align(Alignment.Center))
-            Text(text = "Munna Jaiswal", color = Color.Blue, modifier = Modifier.align(Alignment.CenterEnd))
-        Button(onClick = {
-            Toast.makeText(context , "button clicked", Toast.LENGTH_SHORT).show()
-        } , modifier = Modifier.align(Alignment.BottomCenter)) {
-         Text(text = "Click Me")
-        }yttejd
+    fun CardLayout(){
+        Card(
+            modifier = Modifier.padding(horizontal = 8.dp, vertical = 0.dp),
+            elevation = CardDefaults.cardElevation(10.dp)
+        ) {
+            Column {
+                Image(
+                    painter = painterResource(id = R.drawable.ic_launcher_foreground),
+                    contentDescription = "image of kotlin",
+                    modifier = Modifier.padding(top = 8.dp, bottom = 0.dp)
+                )
+                Text(text = "hi", modifier = Modifier
+                    .padding(10.dp)
+                    .align(Alignment.CenterHorizontally))
+            }
+            
         }
     }
+
 }
 
 
