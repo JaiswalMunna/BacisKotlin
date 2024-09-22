@@ -168,7 +168,7 @@ class MainActivity : ComponentActivity() {
             Toast.makeText(context , "button clicked", Toast.LENGTH_SHORT).show()
         } , modifier = Modifier.align(Alignment.BottomCenter)) {
          Text(text = "Click Me")
-        }yttejd
+        }
         }
     }
 }
